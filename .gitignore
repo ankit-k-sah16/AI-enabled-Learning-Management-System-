@@ -1,0 +1,44 @@
+# AI Skill Intelligence Platform
+.env
+*.db
+*.sqlite
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+*.tmp
+
+# Vector store data
+vector_store/chroma/
+
+# Uploaded documents (may contain sensitive content)
+data/uploads/
+data/raw/*.pdf
+data/raw/*.docx
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / keys
+*.pem
+*.key
