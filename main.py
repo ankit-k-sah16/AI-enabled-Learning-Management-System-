@@ -62,9 +62,24 @@ app.add_middleware(
 # ── Routers ───────────────────────────────────────────────────────────────────
 # Imported inline to avoid circular imports at module load time
 
-from src.api import auth_router, competency_router, assessment_router, health_router  # noqa: E402
+from src.api import (  # noqa: E402
+    auth_router,
+    competency_router,
+    assessment_router,
+    health_router,
+    skill_gap_router,
+    recommendation_router,
+    quiz_router,
+    rag_router,
+    document_router,
+)
 
 app.include_router(health_router.router, tags=["Health"])
 app.include_router(auth_router.router, prefix="/api/v1/auth", tags=["Authentication"])
 app.include_router(competency_router.router, prefix="/api/v1/competencies", tags=["Competencies"])
 app.include_router(assessment_router.router, prefix="/api/v1/assessments", tags=["Assessments"])
+app.include_router(skill_gap_router.router, prefix="/api/v1/gaps", tags=["Skill Gaps"])
+app.include_router(recommendation_router.router, prefix="/api/v1/learning", tags=["Recommendations & Pathways"])
+app.include_router(quiz_router.router, prefix="/api/v1/quizzes", tags=["Quizzes"])
+app.include_router(rag_router.router, prefix="/api/v1/assistant", tags=["RAG Assistant"])
+app.include_router(document_router.router, prefix="/api/v1/documents", tags=["Documents"])
